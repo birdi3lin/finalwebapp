@@ -1,9 +1,8 @@
 "use strict"
 
 class App{
-    constructor()
-    {
-      this.media = [
+    constructor(){
+    this.media = [
         {
           "img" : "img/cappa.jpg",
           "alignment" : "center-align",
@@ -30,27 +29,12 @@ class App{
         }
       ];
 
-      this.entry = [
+    this.entry = [
         {
           "id": 1,
           "what": "Aurora Borealis Viewing",
           "description": "The Aurora is an incredible light show caused by collisions between electrically charged particles released from the sun that enter the earth's atmosphere and collide with gases such as oxygen and nitrogen.",
-          "photo": "img/aurora.jpg",
-          "toDo": [
-            {
-              "pers": "Know the best time of the year to see Aurora Borealis.",
-              "sec": "Book tickets and hotels in advance."
-            },
-            {
-              "pers": "Get a travel guide book for help.",
-              "sec": "Prepare stuff you may need to combat below 0 temperature."
-            },
-            {
-              "pers": "Don't forget to bring a camera with you.",
-              "sec": "Learn some Icelandic greetings if you can."
-            }
-          ],
-
+          "photo": "img/aurora.jpg",        
           "location": "Jokulsarlon Lagoon, Iceland",
           "language": "Icelandic",
           "capital": "Reykjavik",
@@ -70,22 +54,7 @@ class App{
           "id": 2,
           "what": "Ride the Steel Dragon 2000",
           "description": " Opened, appropriately, in 2000—The Year of the Dragon in Asia, the amusement park features several roller coasters, thrill rides, and kid rides, a giant Ferris wheel, and a water park.",
-          "photo": "img/nabana.jpg",
-          "toDo":[
-            {
-              "pers": "Decide on which season to travel to Japan.",
-              "sec": "Book tickets and hotels in advance."
-            },
-            {
-              "pers": "See the Shinkansen schedule online and order a tourist pass.",
-              "sec": "Prepare stuff you may need depending on the season of your trip."
-            },
-            {
-             "pers": "Check trip advisory and Japan tourist sites for more info.",
-             "sec": "Learn basic Nihongo greetigs."
-            }
-          ],
-
+          "photo": "img/nabana.jpg",       
           "location": "Nagashima Spa Land, Mie-ken, Japan",
           "language": "Nihongo",
           "capital" : "Tokyo",
@@ -105,22 +74,7 @@ class App{
           "id": 3,
           "what": "Go fishing with Hime",
           "description": "The waters off Malindi, on Kenya’s central coast, offer one of the few places on the planet where anglers can realistically hope to accomplish a billfish royal slam, or even a fantasy slam.",
-          "photo": "img/fishing.jpg",
-          "toDo":[
-            {
-              "pers": "Fishing season starts from July to September, decide when to go.",
-              "sec": "Contact a travel agency for advice if it's your first time in Africa."
-            },
-            {
-              "pers": "See where to stay and check out the local guides in Malindi",
-              "sec": "Book hotels and flight tickets ahead of time to save some penny."
-            },
-            {
-             "pers": "Secure a certificate of immunization against yellow fever, malaria and cholera.",
-             "sec": "Learn basic Kishwahili greetigs to interact with the locals."
-            }
-          ],
-
+          "photo": "img/fishing.jpg",    
           "location": "Malindi Bay, Kenya",
           "language": "English, Kishwahili",
           "capital": "Nairobi",
@@ -141,21 +95,6 @@ class App{
           "what": "Stargazing in New Zealand, New Zealand",
           "description": "On a nightime tour, Magellanic Clouds can be spotted— satellite galaxies of the Milky Way visible only from the southern hemisphere.",
           "photo": "img/stargaze.jpg",
-          "toDo":[
-            {
-              "pers": "The Magellanic Clouds can be seen throughout the year.",
-              "sec": "Know when is the best time for you to travel to New Zealand."
-            },
-            {
-              "pers": "Tekapo Starlight provides a guided tour in Aoraki. Book in advance.",
-              "sec": "Reserve hotels and flight tickets ahead of time to save some penny."
-            },
-            {
-             "pers": "Be sure to read or get some travel guide books before you go.",
-             "sec": "Visit the tourist information center to get maps and other information."
-            }
-          ],
-
           "location": "Aoraki Mackenzie Dark Sky Reserve",
           "language": "English, Maori",
           "capital": "Wellington",
@@ -173,26 +112,7 @@ class App{
           "id": 5,
           "what": "Escape on a Safari Journey",
           "description": "In 1836 William Cornwallis Harris led an expedition purely to observe and record wildlife and landscapes by the expedition's members. Harris established the safari style of journey, starting with a not too strenuous rising at first light, an energetic day walking, an afternoon rest then concluding with a formal dinner and telling stories in the evening over drinks and tobacco.",
-          "photo": "img/safari.jpg",
-          "toDo":[
-            {
-              "pers": "East Africa is on the equator, and thus has no seasons.",
-              "sec": "The best method of dress is layering. Prepare a hat, too."
-            },
-            {
-              "pers": "You will do quite a lot of walking, so light weight hiking boots are advisable. ",
-              "sec": "The wildlife is at its most active in the early morning and evening, rise early too."
-            },
-            {
-             "pers": "Sunscreen, min 15 SPF, and moisturizer are a must in the African sunshine.",
-             "sec": "Bring correct transformer and plug adapters, flashlight or headlamps, and binoculars."
-            },
-            {
-             "pers": "Be sure you had your medical check up before the trip and medicines you might need.",
-             "sec": "Leave your jewelry at home. A plastic watch is all you really need!"
-            }
-          ],
-
+          "photo": "img/safari.jpg",  
           "location": "Bwindi UNESCO World Heritage Site, Uganda",
           "language": "English, Swahili",
           "capital": "Kampala",
@@ -211,27 +131,8 @@ class App{
           "id": 6,
           "what": "Embark on a Santorini Wine Tour",
           "description": "A journey to the historic vineyards of Santorini, visit the most significant sights, and taste the power of the volcanic wines and traditional products of the island. Learn about the soil and the microclimate, see the vines, and learn about the cultivating techniques.",
-          "photo": "img/winetaste.jpg",
-          "toDo":[
-            {
-              "pers": "April, May, October, and early November are great times for touring Santorini.",
-              "sec": "Hotels are much cheaper in November to March. Book early!"
-            },
-            {
-              "pers": "Search for the best, but economical wine tour company in the island.",
-              "sec": "Reserve a rent-a-car service and explore the island, it’s fun."
-            },
-            {
-             "pers": "Read blogs and post of people who have embarked in Santorini Wine Tours.",
-             "sec": "The island isn't all about wines, check other sightseeing place you can go."
-            },
-            {
-             "pers": "Make a checklist of the stuff you may need for your trip.",
-             "sec": "Don't forget to bring a camera to keep some of your memories in photos."
-            }
-          ],
-
-          "location": "Santorini, Greece",
+          "photo": "img/winetaste.jpg",  
+        "location": "Santorini, Greece",
           "language": "Greek",
           "capital": "Athens",
           "procedure": [
@@ -247,30 +148,20 @@ class App{
         }
       ];
 
-        this.state = [
-          {
-            "bind": {
-              "procedures": [],
-              "toDopers": [],
-              "toDosec": []
-          }
-            }
-        ];
 
-        this.homepaged = [
-          {
-            "img1": "img/shot.jpg",
-            "button1":"component.entryCreate()",
-            "name1":"Add New Entry",
-          },
+    this.homepaged = [  // 2 cards on top of the recent list at the landing page
+        {
+          "img1": "img/shot.jpg",
+          "button1":"component.entryCreate()",
+          "name1":"Add New Entry",
+        },
 
-          {
-            "img1":"img/shot1.jpg",
-            "button1":"component.entryList()",
-            "name1":"Visit Bucket List",
-
-          },
-        ];
+        {
+          "img1":"img/shot1.jpg",
+          "button1":"component.entryList()",
+          "name1":"Visit Bucket List",
+        },
+      ];
     }
 
     render(html, component){
@@ -281,7 +172,7 @@ class App{
       component.innerHTML = html;
       }
 
-    createEntry(){
+    createEntry(){    //Enter New Entry Function
       let id = document.getElementById('entry_id');
       let what = document.getElementById('entry_what');
       let description = document.getElementById('entry_description');
@@ -290,101 +181,92 @@ class App{
       let language = document.getElementById('entry_language');
       let capital = document.getElementById('entry_capital');
 
-      let dummytoDo = [];
-        for(let i=0;i<this.state[0].bind.toDopers.length;i++){
-          dummytoDo.push({
-            "pers" : this.state[0].bind.toDopers[i],
-            "sec" : this.state[0].bind.toDosec[i]
-          });
-        }
-      let toDo = dummytoDo;
-
-      let dummyProcedure = [];
-        for(let i=0;i<this.state[0].bind.procedures.length;i++){
-         dummyProcedure.push(this.state[0].bind.procedures[i]);
-        }
-      let procedure = dummyProcedure;
-
+             
       let entry = {			
          "id": id.value,
          "what": what.value,
          "description": description.value,
          "photo": photo.value,
-         "toDo": toDo,
          "location": location.value,
          "language": language.value,
          "capital": capital.value,
-         "procedure": procedure
       };
-
 
       this.entry.push(entry);
 
-      		//Clear Fields
-      this.state[0].bind.procedures = this.state[0].bind.toDopers = this.state[0].bind.toDosec = [];
+//Clear Fields after SAVE
       	id.value = what.value = description.value = photo.value = location.value = language.value = capital.value = ''; 
     }	
 
-    deleteEntry(key){
+    deleteEntry(key){       //delete an entry
       let e = this.entry;
       for(let i=0;i<e.length;i++){
-       if(e[i].id == key){
+      if(e[i].id == key){
         this.entry.splice(i,1);
         break;
       }
     }		
     this.entryList();
+   }
+   updateEntryId(id){
+
+  id = id+1;
+  let entrydummy = {
+    "id" :  id,
+    "what" : $('#what_1').val(),
+    "description" : $('#description_1').val(),
+    "photo" : $('#photo_1').val(),
+    "location" : $('#location_1').val(),
+    "language" : $('#language_1').val(),
+      "capital" : $('#capital_1').val(),
+  
   }
 
-  findEntryByID(id){
-    let e = this.entry;
-    for(let i=0;i<e.length;i++){
-     if(id==e[i].id){
-      return e[i];
+  let r = this.entry;
+  for(let i=0;i<r.length;i++){
+    if(r[i].id == id){
+      r[i] = entrydummy;
+      break;
     }
   }
-  }	
 
-  findEntryByName(what){
+  this.entryList();
+}
+
+  
+
+    findEntryByID(id){  //input ID of each entry to search an entry
+    let e = this.entry;
+    for(let i=0;i<e.length;i++){
+      if(id==e[i].id){
+      return e[i];
+      }
+    }
+    }	
+
+   findEntryByName(what){   //input name to search for an entry
     let objects = [];
     let e = this.entry;
     for(let i=0;i<e.length;i++){
      let expr = (e[i].what.toUpperCase().indexOf(what.toUpperCase()) > -1);
-  			// console.log(name," vs ",r[i].name," = ",expr);
+  			// console.log(name," vs ",e[i].name," = ",expr);
   			if(expr){
-  				objects.push(e[i]);
+  				objects.push(e[i]); //showing an entry if it matches the input on search box
   			}
   		}
   		return objects;
   	}
 
-  	bindEntryNewProcedures(val,id){
-  		let bind = this.state[0].bind.procedures;
-  		bind[id] = val;
-  		// console.log(bind);
-  	}	
-
-  	bindEntryNewtoDo(val,id,obj){
-  		let bind = null;
-  		if(obj === "pers"){
-  			bind = this.state[0].bind.toDopers;
-  		}
-  		else if(obj === "sec"){
-  			bind = this.state[0].bind.toDosec;
-  		}
-  		bind[id] = val;
-  		// console.log(bind);
-  	}	
   }
 
-class Component extends App{
+class Component extends App{  //another class HTML class
   constructor(){
     super();
 
   }
   
   landingpage(){
-    let html = `
+      let html = `
 
       <nav>
         <div class="nav-wrapper blue-grey">
@@ -402,283 +284,190 @@ class Component extends App{
         </div>
       </nav>
 
-    `;
-
-    html+=`
-            <div class="slider">
-            <ul class="slides">
       `;
 
-      for(let i=0;i<this.media.length;i++){
-        html += `
-          <li>
-            <img src="${this.media[i].img}"> <!-- random image -->
-              <div class="caption ${this.media[i].alignment}">
-                <h3>${this.media[i].caption}</h3>
-                <h5 class="light grey-text text-lighten-3">${this.media[i].slogan}</h5>
-              </div>
-          </li>
-        
+      html+=`
+              <div class="slider">
+              <ul class="slides">
         `;
-      }
 
-        html += `
-            </div>
-
-      <div id="entryRecent"></div>
-      <div id="entryView"></div>
-      <div id="entryList"></div>
-      <div id="entryCreate"></div>
-      <div id="landingpage"></div>
-      <div id="home"></div>
-
-      <div> 
-        <img class="materialboxed" width="945" src="img/puggy5.jpg">
-      </div>
-
-      <footer class="page-footer blue-grey darken-1" >
-        <div class="container">
-          <div class="row">
-            <div class="col l6 s12">
-              <h5 class="white-text">Bucket List App</h5>
-              <p class="grey-text text-lighten-4">A sample Web App made to master materialize.css and apply the concept of OOP.</p>
-            </div>
-                <div class="col l4 offset-l2 s12">
-                <h5 class="white-text">Links</h5>
-                  <ul>
-                    <li>
-                    <a class="grey-text text-lighten-3" href="#" onclick="component.pugLayout()">
-                    Home</a></li>
-                    <li><a class="grey-text text-lighten-3" href="#" onclick="component.entryList()">
-                    <!-- <i class="material-icons left">assignment</i> -->
-                    Bucket List</a></li>
-                    <li><a class="grey-text text-lighten-3" href="#" onclick="component.entryCreate()">
-                    <!-- <i class="material-icons left">dashboard</i> -->
-                    New Entry</a></li>
-                  </ul>
+        for(let i=0;i<this.media.length;i++){
+          html += `
+            <li>
+              <img src="${this.media[i].img}"> <!-- random image -->
+                <div class="caption ${this.media[i].alignment}">
+                  <h3>${this.media[i].caption}</h3>
+                  <h5 class="light grey-text text-lighten-3">${this.media[i].slogan}</h5>
                 </div>
-            </div>
-            </div>
-          <div class="footer-copyright">
-            <div class="container">
-            © 2016-2017 Copyright Text
-            <img class="right" src="img/kuma1.gif" width="35" height="30" style="margin-top:6px;" />
-            </div>
+            </li>
+          
+          `;
+        }
+
+          html += `
+              </div>
+
+        <div id="entryRecent"></div>
+        <div id="entryView"></div>
+        <div id="entryList"></div>
+        <div id="entryCreate"></div>
+        <div id="landingpage"></div>
+        <div id="home"></div>
+          <div id="updateEntry"></div>
+
+        <div> 
+          <img class="materialboxed" src="img/puggy5.jpg">
         </div>
-      </footer>
 
-    `;
+        <footer class="page-footer blue-grey darken-1" >
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">Bucket List App</h5>
+                <p class="grey-text text-lighten-4">A sample Web App made to master materialize.css and apply the concept of OOP.</p>
+              </div>
+                  <div class="col l4 offset-l2 s12">
+                  <h5 class="white-text">Links</h5>
+                    <ul>
+                      <li>
+                      <a class="grey-text text-lighten-3" href="#" onclick="component.landingpage()">
+                      Home</a></li>
+                      <li><a class="grey-text text-lighten-3" href="#" onclick="component.entryList()">
+                      <!-- <i class="material-icons left">assignment</i> -->
+                      Bucket List</a></li>
+                      <li><a class="grey-text text-lighten-3" href="#" onclick="component.entryCreate()">
+                      <!-- <i class="material-icons left">dashboard</i> -->
+                      New Entry</a></li>
+                    </ul>
+                  </div>
+              </div>
+              </div>
+            <div class="footer-copyright">
+              <div class="container">
+              © 2016-2017 Copyright Text
+              <img class="right" src="img/kuma1.gif" width="35" height="30" style="margin-top:6px;" />
+              </div>
+          </div>
+        </footer>
 
-    this.reRender(`
-     ${html}
+      `;
 
-     `,document.getElementById("app"));
-    this.entryRecent()
-       $('#entryList').hide();
-       $('#entryView').hide();
-       $('#entryRecent').hide();
-       $('#entryCreate').hide();    
-       $('#home').hide(); 
-         $('#landingpage').show();
+  this.reRender(`
+       ${html}
+
+       `,document.getElementById("app"));
+
+  this.entryRecent();
+
+      // $('#entryList').hide();
+      // $('#entryView').hide();
+      //$('#entryRecent').hide();
+      // $('#entryCreate').hide();    
+      //$('#home').hide(); 
+      // $('#landingpage').show();
   }
 
-    /*entrySlides(){
-        let html =`
-            <div class="slider">
-                <ul class="slides">
-
-                `;
-
-                for(let i=0;i<this.media.length;i++){
-                    html += `
-                          <li>
-                            <img src="${this.media[i].img}">
-                            <div class="caption ${this.media[i].alignment}">
-                              <h3>${this.media[i].caption}</h3>
-                              <h5 class="light grey-text text-lighten-3">${this.media[i].slogan}</h5>
-                            </div>
-                          </li>
-                        
-                     `;
-                    }
-
-             html += `</div>`
-
-        this.render(`
-            ${html}
-            `,document.getElementById("entrySlides"));
-          }*/
-
-          entryRecent(){
-
-            let html = `
-
-              <div class="row">
-`;
-
-
-
-
-
-    for(let i=0;i<this.homepaged.length;i++){
-      html+= `
-      <div class="col s6 m6">
-      <div class="card ">
-      <div class="card-image">
-      <img src="${this.homepaged[i].img1}">
-
-      </div>
-      <div class="card-content">
-
-      </div>
-      <div class="card-action">
-      <a href="#" onclick="${this.homepaged[i].button1}"><i class="material-icons right">zoom_in</i>${this.homepaged[i].name1}</a>
-      </div>
-      </div>
-      </div>
+  entryRecent(){ //recent entries saved can be seen on the landing page
+    let html = `
+      <div class="row"> 
       `;
-    }
+        for(let i=0;i<this.homepaged.length;i++){
+          html+= `
+            <div class="col s6 m6">
+              <div class="card ">
+                <div class="card-image">
+                <img src="${this.homepaged[i].img1}">
+                </div>
+   
+                  <div class="card-action">
+                    <a href="#" onclick="${this.homepaged[i].button1}"><i class="material-icons right">zoom_in</i>${this.homepaged[i].name1}</a>
+                </div>
+              </div>
+            </div>
+      `;
+        }
 
-    html+=`
-
-
-            <h5 class="center-align">RECENT LIST IN THE BUCKET</h5>
+        html+=`
+          <h5 class="center-align">RECENT LIST IN THE BUCKET</h5>
             <div class="row">
             `;
+              let e = this.entry;
+              let count = 0;
+              for(let i=(e.length-1);i>=0;i--){
+              if(count++ === 3)break;
 
+                html+= `
+                  <div class="col s12 m4">
+                   <div class="card small hoverable">
+                      <div class="card-image">
+                        <img src="${e[i].photo}">
+                        <span class="card-title">${e[i].what}</span>
+                      </div>
+                      <div class="card-content">
+                        <p>${e[i].description}</p>
+                      </div>
+                      <div class="card-action">
+                        <a href="#" onclick="component.entryView(${e[i].id})">More</a>
+                      </div>
+                   </div>
+                 </div>
+                 `;
+              }
 
+        html += `</div>`;
 
+        this.render(`
+          ${html}
+            `,document.getElementById("entryRecent"));
+  }
 
-
-
-
-            
-
-            let e = this.entry;
-            let count = 0;
-            for(let i=(e.length-1);i>=0;i--){
-             if(count++ === 3)break;
-             html+= `
-             <div class="col s12 m4">
-             <div class="card small hoverable">
-             <div class="card-image">
-             <img src="${e[i].photo}">
-             <span class="card-title">${e[i].what}</span>
-             </div>
-             <div class="card-content">
-             <p>${e[i].description}</p>
-             </div>
-             <div class="card-action">
-             <a href="#" onclick="component.entryView(${e[i].id})">More</a>
-             </div>
-             </div>
-             </div>
-             `;
-           }
-
-           html += `</div>`;
-
-           this.render(`
-             ${html}
-             `,document.getElementById("entryRecent"));
-           
-           
-         }
-
-         entryView(id){
+  entryView(id){  //View entry by search box - type ID or NAME of entry
           let e = this.findEntryByID(id);
 
           let html = `
-          <h5 class="center-align">${e.what}</h5>
-          <div class="row">				
-          <div class="col s12 m12">
-          <div class="card horizontal small">
-          <div class="card-image">
-          <img src="${e.photo}">
-          </div>
-          <div class="card-stacked">
-          <div class="card-content">
-          <p>${e.description}</p>
-          </div>
-          <div class="card-action small">								
-          <span onclick="component.deleteEntry(${e.id})" class="new badge small red" data-badge-caption="">DELETE</span>
-          <span onclick="component.entryList()" class="new badge small" data-badge-caption="">BACK TO List</span>
-          </div>
-          </div>					
-          </div>				
-          </div>			
-          </div>
-          `;
+            <h5 class="center-align">${e.what}</h5>
+            <div class="row">				
+              <div class="col s12 m12">
+                <div class="card horizontal small">
+                  <div class="card-image">
+                  <img src="${e.photo}">
+                  </div>
+                    <div class="card-stacked">
+                      <div class="card-content">
+                      <p>${e.description}</p>
+                      </div>
+                      <div class="card-action small">								
+                      <span onclick="component.deleteEntry(${e.id})" class="new badge small red" data-badge-caption="">DELETE</span>
+                      <span onclick="component.entryList()" class="new badge small" data-badge-caption="">BACK TO LIST</span>
+                            <span onclick="component.updateEntry(${e.id})" class="new badge small" data-badge-caption="">Update</span>
+                      </div>
+                    </div>					
+                </div>				
+              </div>			
+            </div>
+            `;
 
-          html += `
-          <div class="row">
-          <table class="striped">
-          <thead>
-          <tr>
-          <th>Location</th>
-          <th>Language Used</th>
-          <th>Capital City</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-          <td>${e.location}</td>
-          <td>${e.language}</td>
-          <td>${e.capital}</td>
-          </tr>					
-          </tbody>
-          </table>
-          </div>
-          `;
+            html += `
+              <div class="row">
+                <table class="striped">
+                  <thead>
+                    <tr>
+                      <th>Location</th>
+                      <th>Language Used</th>
+                      <th>Capital City</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>${e.location}</td>
+                      <td>${e.language}</td>
+                      <td>${e.capital}</td>
+                    </tr>					
+                  </tbody>
+                </table>
+              </div>
+            `;
 
-          html += `
-          <div class="row">				
-          <div class="col s6 m6">
-          <h6>Things to do</h6>
-          <ul class="collection">
-          `;
-
-          for(let i=0;i<e.toDo.length;i++){
-           let ei = e.toDo[i];
-           html += `
-           <li class="collection-item avatar">
-           <i class="material-icons circle">star</i>
-           <span class="title">${ei.pers}</span>
-           <p>${ei.sec}<br>
-
-           </p>
-
-           </li>
-           `;
-         }
-
-         html += `				
-         </ul>
-         </div>
-         <div class="col s6 m6">
-         <h6>Visa Information</h6>
-         <ul class="collection">
-         `;
-
-         for(let i=0;i<e.procedure.length;i++){
-           let ep = e.procedure[i];
-           html += `
-           <li class="collection-item avatar">
-           <i class="material-icons circle">done</i>
-           <span class="title">Step ${i+1}</span>
-           <p>${ep}<br>
-
-           </p>
-
-           </li>
-           `;
-         }	
-
-         html += `
-         </ul>
-         </div>			
-         </div>
-         `;
 
          this.reRender(`		
            ${html}			
@@ -688,12 +477,13 @@ class Component extends App{
          $('#entryList').hide();
          $('#entryCreate').hide();
          $('#home').hide();
-           $('#landingpage').hide();
+         $('#landingpage').hide();
+          $('#updateEntry').hide();
        }
 
-       entryList(){
-        let html = `
-        <br/>
+  entryList(){    //List of entries on click the BUCKET LIST button
+    let html = `
+      <br/>
         <nav>
         <div class="nav-wrapper white">
         <form>
@@ -742,9 +532,10 @@ class Component extends App{
        $('#entryCreate').hide();		
        $('#home').hide(); 
          $('#landingpage').hide();
+          $('#updateEntry').hide();
      }
 
-     entryListItems(what){
+  entryListItems(what){  // showing an entry at search using name in the serch box calling entry view fxn
       let html = ``;
       let e = this.findEntryByName(what);
       for(let i=0;i<e.length;i++){
@@ -774,9 +565,10 @@ class Component extends App{
      $('#entryCreate').hide();	
      $('#home').hide(); 
        $('#landingpage').hide();
+        $('#updateEntry').hide();
    }
 
-   entryCreate(){
+  entryCreate(){ // page for creating new ENTRY into the bucket list
     let html = `
     <div class="row">
     <form class="col s12">
@@ -815,22 +607,6 @@ class Component extends App{
     <label for="entry_capital">CAPITAL CITY</label>
     </div>
     </div>
-
-
-    <div class="row">
-    <div class="input-field col s6">
-    <h6> THINGS TO DO</h6>
-    <button onclick="component.entryNewtoDo()" class="btn-floating waves-effect waves-light"><i class="material-icons">add</i></button>
-    <div id="entryNewtoDo"></div>
-    </div>
-    <div class="input-field col s6">
-    <h6>VISA INFORMATION</h6>
-    <button onclick="component.entryNewProcedures()" class="btn-floating waves-effect waves-light"><i class="material-icons">add</i></button>
-    <div id="entryNewProcedures"></div>
-    </div>
-    </div>					
-    </form>
-    </div>			
     `;
 
     this.reRender(`
@@ -842,158 +618,137 @@ class Component extends App{
     $('#entryeRecent').hide();
     $('#home').hide();
       $('#landingpage').hide();
+       $('#updateEntry').hide();
     this.state[0].bind.procedures = [];		
     this.state[0].bind.toDopers = [];		
     this.state[0].bind.toDosec = [];		
   }
 
-  entryNewProcedures(){
-    let bind = this.state[0].bind.procedures;
-    bind.push("");		
 
-    let html = ``;
-    for(let i=0;i<bind.length;i++){
-     let baba_bind = `onkeyup="component.bindEntryNewProcedures(this.value,${i})"`;
-     html += `
-     <div class="row">
-     <div class="input-field col s12">
-     <input ${baba_bind} value="${bind[i]}" type="text" />					
-     </div>
-     </div>		
+    updateEntry(id){
+
+    id = id - 1;
+    let html = `
+    
+
+
+    <center>
+    <div class="form-style-3">
+    <div class="row">
+    <fieldset>
+    <center><h1>Update Entries</h1></center>
+    <center><span >Entry Passes<span class="required">*</span></span><input disabled value="${this.entry.length+1}" id="entry_id" type="text" ></label></center>
+    <center><span>Update Name</span><input type="email" id="what_1"value="${this.entry[id].what}"/> </label></center>
+    <center><span>Update Description</span><input type="email" id="description_1"value="${this.entry[id].description}"/> </label></center>
+    <center><span>Update Photo</span><input type="email" id="photo_1"value="${this.entry[id].photo}"/> </label></center>
+	<center> <span>Update Location</span><input type="email" id="location_1"value="${this.entry[id].location} "/> </label></center>
+	   <center><span>Update Language</span><input type="email" id="language_1"value="${this.entry[id].language}"/> </label></center>
+    <center><span>Update Capital</span><input type="email" id="capital_1"value="${this.entry[id].capital}"/> </label></center>
+ 
+
+    <div class="center-align">
+    <button onclick="component.entryList()" class="btn waves-effect waves-light">Back</button>
+    <a onclick="component.updateEntryId(${id})" class="waves-effect blue waves-light btn">Update</a>
+    </div>
+    </div>
+</fieldset>
+
+    </div>
+    </center>
+
+
+
+
+
+
+    `;  
+    this.reRender(`
+
+      ${html}
+
+      `,document.getElementById("updateEntry"));   
+  $('#entryCreate').hide();
+    $('#entryList').hide();
+    $('#entryView').hide();
+    $('#entryeRecent').hide();
+    $('#home').hide();
+      $('#landingpage').hide();
+      $('#updateEntry').show();
+    
+    
+    
+    
+  }
+
+  
+
+  home(){ //is used to call the home page to enable the whole landing page
+    let html=`
+      <div class="row">
+      `;
+        for(let i=0;i<this.homepaged.length;i++){
+        html+= `
+        <div class="col s6 m6">
+        <div class="card ">
+        <div class="card-image">
+        <img src="${this.homepaged[i].img1}">
+
+        </div>
+        <div class="card-content">
+
+        </div>
+        <div class="card-action">
+        <a href="#" onclick="${this.homepaged[i].button1}"><i class="material-icons right">zoom_in</i>${this.homepaged[i].name1}</a>
+        </div>
+        </div>
+        </div>
+        `;
+      }
+
+      html+=`
+        <h5 class="center-align">RECENT LIST IN THE BUCKET</h5>
+        <div class="row">
+      `;
+
+     let e = this.entry;
+     let count = 0;
+       for(let i=(e.length-1);i>=0;i--){       
+       if(count++ === 3)break;
+     html+= `
+       <div class="col s12 m4">
+       <div class="card small hoverable">
+       <div class="card-image">
+       <img src="${e[i].photo}">
+       <span class="card-title">${e[i].what}</span>
+       </div>
+       <div class="card-content">
+       <p>${e[i].description}</p>
+       </div>
+       <div class="card-action">
+       <a href="#" onclick="component.entryView(${e[i].id})">More</a>
+       </div>
+       </div>
+       </div>
      `;
-   }
+    }
+
+      html+=`
+      `;
 
    this.reRender(`
      ${html}
-     `,document.getElementById("entryNewProcedures"));
+     `,document.getElementById("entryCreate"));
 
- }
+   $('#entryeRecent').show();
+   $('#entryCreate').show();
+   $('#entryList').hide();
+   $('#entryView').hide();
+   $('#landingpage').hide();
+   $('#home').show();
+   $('#updateEntry').hide();
+  }	
 
- entryNewtoDo(obj){
-  let bind_pers= this.state[0].bind.toDopers;
-  let bind_sec = this.state[0].bind.toDosec;
-  bind_pers.push("");		
-  bind_sec.push("");		
-
-  let html = ``;
-  for(let i=0;i<bind_pers.length;i++){
-   let baba_bind_pers = `onkeyup="component.bindEntryNewtoDo(this.value,${i},'pers')"`;
-   let baba_bind_sec = `onkeyup="component.bindEntryNewtoDo(this.value,${i},'sec')"`;
-   html += `
-   <div class="row">
-   <div class="input-field col s12">
-   <input ${baba_bind_pers} value="${bind_pers[i]}" type="text" />					
-   </div>
-   </div>	
-   <div class="row">
-   <div class="input-field col s12">
-   <input ${baba_bind_sec} value="${bind_sec[i]}" type="text" />					
-   </div>
-   </div>		
-   `;
- }
-
- this.reRender(`
-   ${html}
-   `,document.getElementById("entryNewtoDo"));
-
- 
-
-}
-
-
-home(){
-
-
-  let html=`
-
-
-<div class="row">
-
-
-`;
-
-
-    for(let i=0;i<this.homepaged.length;i++){
-      html+= `
-      <div class="col s6 m6">
-      <div class="card ">
-      <div class="card-image">
-      <img src="${this.homepaged[i].img1}">
-
-      </div>
-      <div class="card-content">
-
-      </div>
-      <div class="card-action">
-      <a href="#" onclick="${this.homepaged[i].button1}"><i class="material-icons right">zoom_in</i>${this.homepaged[i].name1}</a>
-      </div>
-      </div>
-      </div>
-      `;
-    }
-
-
-
-
-
-html+=`
-
-
-
-
-
-  <h5 class="center-align">RECENT LIST IN THE BUCKET</h5>
-  <div class="row">
-
-
-
-  `;
-
-  let e = this.entry;
-  let count = 0;
-  for(let i=(e.length-1);i>=0;i--){       
-   if(count++ === 3)break;
-   html+= `
-   <div class="col s12 m4">
-   <div class="card small hoverable">
-   <div class="card-image">
-   <img src="${e[i].photo}">
-   <span class="card-title">${e[i].what}</span>
-   </div>
-   <div class="card-content">
-   <p>${e[i].description}</p>
-   </div>
-   <div class="card-action">
-   <a href="#" onclick="component.entryView(${e[i].id})">More</a>
-   </div>
-   </div>
-   </div>
-   `;
- }
-
- html+=`
-
-
-
-
- `;
- this.reRender(`
-   ${html}
-   `,document.getElementById("entryCreate"));
- $('#entryeRecent').show();
- $('#entryCreate').show();
- $('#entryList').hide();
- $('#entryView').hide();
- $('#landingpage').hide();
- $('#home').show();
-
-
-
-
-}	
-
-}
+  }
 
 let component = new Component();
 component.landingpage();

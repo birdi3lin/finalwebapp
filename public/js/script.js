@@ -132,7 +132,7 @@ class App{
           "what": "Embark on a Santorini Wine Tour",
           "description": "A journey to the historic vineyards of Santorini, visit the most significant sights, and taste the power of the volcanic wines and traditional products of the island. Learn about the soil and the microclimate, see the vines, and learn about the cultivating techniques.",
           "photo": "img/winetaste.jpg",  
-        "location": "Santorini, Greece",
+          "location": "Santorini, Greece",
           "language": "Greek",
           "capital": "Athens",
           "procedure": [
@@ -196,7 +196,9 @@ class App{
 
 //Clear Fields after SAVE
       	id.value = what.value = description.value = photo.value = location.value = language.value = capital.value = ''; 
-    }	
+  
+      this.entryListItems();
+    }
 
     deleteEntry(key){       //delete an entry
       let e = this.entry;
@@ -208,32 +210,31 @@ class App{
     }		
     this.entryList();
    }
-   updateEntryId(id){
 
-  id = id+1;
-  let entrydummy = {
-    "id" :  id,
-    "what" : $('#what_1').val(),
-    "description" : $('#description_1').val(),
-    "photo" : $('#photo_1').val(),
-    "location" : $('#location_1').val(),
-    "language" : $('#language_1').val(),
+    updateEntryId(id){  //update an entry using id to call
+
+    id = id+1;
+    let entrydummy = {
+      "id" :  id,
+      "what" : $('#what_1').val(),
+      "description" : $('#description_1').val(),
+      "photo" : $('#photo_1').val(),
+      "location" : $('#location_1').val(),
+      "language" : $('#language_1').val(),
       "capital" : $('#capital_1').val(),
-  
-  }
-
-  let r = this.entry;
-  for(let i=0;i<r.length;i++){
-    if(r[i].id == id){
-      r[i] = entrydummy;
-      break;
+    
     }
+
+    let e = this.entry;
+    for(let i=0;i<e.length;i++){
+      if(e[i].id == id){
+        e[i] = entrydummy;
+        break;
+      }
+    }
+
+    this.entryList();
   }
-
-  this.entryList();
-}
-
-  
 
     findEntryByID(id){  //input ID of each entry to search an entry
     let e = this.entry;
@@ -244,11 +245,11 @@ class App{
     }
     }	
 
-   findEntryByName(what){   //input name to search for an entry
+    findEntryByName(what){   //input name to search for an entry
     let objects = [];
     let e = this.entry;
-    for(let i=0;i<e.length;i++){
-     let expr = (e[i].what.toUpperCase().indexOf(what.toUpperCase()) > -1);
+      for(let i=0;i<e.length;i++){
+      let expr = (e[i].what.toUpperCase().indexOf(what.toUpperCase()) > -1); //changes lowercase to uppercase
   			// console.log(name," vs ",e[i].name," = ",expr);
   			if(expr){
   				objects.push(e[i]); //showing an entry if it matches the input on search box
@@ -260,494 +261,498 @@ class App{
   }
 
 class Component extends App{  //another class HTML class
-  constructor(){
-    super();
+    constructor(){
+      super();
 
-  }
-  
-  landingpage(){
-      let html = `
+    }
+    
+    landingpage(){
+        let html = `
 
-      <nav>
-        <div class="nav-wrapper blue-grey">
-          <a href="index.html" class="brand-logo">&nbsp;&nbsp;Bucket List of a Pug</a>
-          <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-            <ul class="right hide-on-med-and-down">
-              <li><a href="#" onclick="component.home()"><i class="material-icons left">thumb_up</i>Homepage</a></li>
-              <li><a href="#" onclick="component.entryList()"><i class="material-icons left">assignment</i>Bucket List</a></li>
-              <li><a href="#" onclick="component.entryCreate()"><i class="material-icons left">note_add</i>New Entry</a></li>
-            </ul>
-            <ul class="side-nav" id="mobile-demo">
-              <li><a href="#" onclick="component.entryList()"><i class="material-icons left">assignment</i>Bucket List</a></li>
-              <li><a href="#" onclick="component.entryCreate()"><i class="material-icons left">note_add</i>New Entry</a></li>
-            </ul>
-        </div>
-      </nav>
-
-      `;
-
-      html+=`
-              <div class="slider">
-              <ul class="slides">
-        `;
-
-        for(let i=0;i<this.media.length;i++){
-          html += `
-            <li>
-              <img src="${this.media[i].img}"> <!-- random image -->
-                <div class="caption ${this.media[i].alignment}">
-                  <h3>${this.media[i].caption}</h3>
-                  <h5 class="light grey-text text-lighten-3">${this.media[i].slogan}</h5>
-                </div>
-            </li>
-          
-          `;
-        }
-
-          html += `
+            <nav>
+              <div class="nav-wrapper blue-grey">
+                <a href="index.html" class="brand-logo">&nbsp;&nbsp;Bucket List of a Pug</a>
+                <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+                  <ul class="right hide-on-med-and-down">
+                    <li><a href="#" onclick="component.home()"><i class="material-icons left">thumb_up</i>Homepage</a></li>
+                    <li><a href="#" onclick="component.entryList()"><i class="material-icons left">assignment</i>Bucket List</a></li>
+                    <li><a href="#" onclick="component.entryCreate()"><i class="material-icons left">note_add</i>New Entry</a></li>
+                  </ul>
+                  <ul class="side-nav" id="mobile-demo">
+                    <li><a href="#" onclick="component.entryList()"><i class="material-icons left">assignment</i>Bucket List</a></li>
+                    <li><a href="#" onclick="component.entryCreate()"><i class="material-icons left">note_add</i>New Entry</a></li>
+                  </ul>
               </div>
+            </nav>
 
-        <div id="entryRecent"></div>
-        <div id="entryView"></div>
-        <div id="entryList"></div>
-        <div id="entryCreate"></div>
-        <div id="landingpage"></div>
-        <div id="home"></div>
-          <div id="updateEntry"></div>
-
-        <div> 
-          <img class="materialboxed" src="img/puggy5.jpg">
-        </div>
-
-        <footer class="page-footer blue-grey darken-1" >
-          <div class="container">
-            <div class="row">
-              <div class="col l6 s12">
-                <h5 class="white-text">Bucket List App</h5>
-                <p class="grey-text text-lighten-4">A sample Web App made to master materialize.css and apply the concept of OOP.</p>
-              </div>
-                  <div class="col l4 offset-l2 s12">
-                  <h5 class="white-text">Links</h5>
-                    <ul>
-                      <li>
-                      <a class="grey-text text-lighten-3" href="#" onclick="component.landingpage()">
-                      Home</a></li>
-                      <li><a class="grey-text text-lighten-3" href="#" onclick="component.entryList()">
-                      <!-- <i class="material-icons left">assignment</i> -->
-                      Bucket List</a></li>
-                      <li><a class="grey-text text-lighten-3" href="#" onclick="component.entryCreate()">
-                      <!-- <i class="material-icons left">dashboard</i> -->
-                      New Entry</a></li>
-                    </ul>
-                  </div>
-              </div>
-              </div>
-            <div class="footer-copyright">
-              <div class="container">
-              © 2016-2017 Copyright Text
-              <img class="right" src="img/kuma1.gif" width="35" height="30" style="margin-top:6px;" />
-              </div>
-          </div>
-        </footer>
-
-      `;
-
-  this.reRender(`
-       ${html}
-
-       `,document.getElementById("app"));
-
-  this.entryRecent();
-
-      // $('#entryList').hide();
-      // $('#entryView').hide();
-      //$('#entryRecent').hide();
-      // $('#entryCreate').hide();    
-      //$('#home').hide(); 
-      // $('#landingpage').show();
-  }
-
-  entryRecent(){ //recent entries saved can be seen on the landing page
-    let html = `
-      <div class="row"> 
-      `;
-        for(let i=0;i<this.homepaged.length;i++){
-          html+= `
-            <div class="col s6 m6">
-              <div class="card ">
-                <div class="card-image">
-                <img src="${this.homepaged[i].img1}">
-                </div>
-   
-                  <div class="card-action">
-                    <a href="#" onclick="${this.homepaged[i].button1}"><i class="material-icons right">zoom_in</i>${this.homepaged[i].name1}</a>
-                </div>
-              </div>
-            </div>
-      `;
-        }
-
-        html+=`
-          <h5 class="center-align">RECENT LIST IN THE BUCKET</h5>
-            <div class="row">
             `;
-              let e = this.entry;
-              let count = 0;
-              for(let i=(e.length-1);i>=0;i--){
-              if(count++ === 3)break;
 
-                html+= `
-                  <div class="col s12 m4">
-                   <div class="card small hoverable">
-                      <div class="card-image">
-                        <img src="${e[i].photo}">
-                        <span class="card-title">${e[i].what}</span>
-                      </div>
-                      <div class="card-content">
-                        <p>${e[i].description}</p>
-                      </div>
-                      <div class="card-action">
-                        <a href="#" onclick="component.entryView(${e[i].id})">More</a>
-                      </div>
-                   </div>
-                 </div>
-                 `;
-              }
+            html+=`
+                <div class="slider">
+                <ul class="slides">
+            `;
+                for(let i=0;i<this.media.length;i++){
+                  html += `
+                    <li>
+                      <img src="${this.media[i].img}"> <!-- random image -->
+                        <div class="caption ${this.media[i].alignment}">
+                          <h3>${this.media[i].caption}</h3>
+                          <h5 class="light grey-text text-lighten-3">${this.media[i].slogan}</h5>
+                        </div>
+                    </li>
+                  
+                  `;
+                }
 
-        html += `</div>`;
+            html += `
+                </div>
 
-        this.render(`
-          ${html}
-            `,document.getElementById("entryRecent"));
-  }
+                <div id="entryRecent"></div>
+                <div id="entryView"></div>
+                <div id="entryList"></div>
+                <div id="entryCreate"></div>
+                <div id="landingpage"></div>
+                <div id="home"></div>
+                <div id="updateEntry"></div>
 
-  entryView(id){  //View entry by search box - type ID or NAME of entry
-          let e = this.findEntryByID(id);
-
-          let html = `
-            <h5 class="center-align">${e.what}</h5>
-            <div class="row">				
-              <div class="col s12 m12">
-                <div class="card horizontal small">
-                  <div class="card-image">
-                  <img src="${e.photo}">
+                <div class="container"> 
+                  <div class="row" id="materialboxed">
+                   <img src="img/puggy5.jpg">
                   </div>
+                </div>
+
+                <footer class="page-footer blue-grey darken-1" >
+                  <div class="container">
+                    <div class="row">
+                      <div class="col l6 s12">
+                        <h5 class="white-text">Bucket List App</h5>
+                        <p class="grey-text text-lighten-4">A sample Web App made to master materialize.css and apply the concept of OOP.</p>
+                      </div>
+                          <div class="col l4 offset-l2 s12">
+                          <h5 class="white-text">Links</h5>
+                            <ul>
+                              <li>
+                              <a class="grey-text text-lighten-3" href="#" onclick="component.home()">
+                              Home</a></li>
+                              <li><a class="grey-text text-lighten-3" href="#" onclick="component.entryList()">
+                              <!-- <i class="material-icons left">assignment</i> -->
+                              Bucket List</a></li>
+                              <li><a class="grey-text text-lighten-3" href="#" onclick="component.entryCreate()">
+                              <!-- <i class="material-icons left">dashboard</i> -->
+                              New Entry</a></li>
+                            </ul>
+                          </div>
+                      </div>
+                      </div>
+                    <div class="footer-copyright">
+                      <div class="container">
+                      © 2016-2017 Copyright Text
+                      <img class="right" src="img/kuma1.gif" width="35" height="30" style="margin-top:6px;" />
+                      </div>
+                  </div>
+                </footer>
+
+            `;
+    this.reRender(`
+                  ${html}
+                  `,document.getElementById("app"));
+    this.entryRecent();
+
+              /*  $('#entryList').hide();
+                  $('#entryView').hide();
+                  $('#entryRecent').hide();
+                  $('#entryCreate').hide();    
+                  $('#home').hide(); 
+                  $('#landingpage').show(); */
+    }
+
+    entryRecent(){ //recent entries saved can be seen on the landing page
+      let html = `
+        <div class="row"> 
+        `;
+          for(let i=0;i<this.homepaged.length;i++){
+            html+= `
+              <div class="col s6 m6">
+                <div class="card ">
+                  <div class="card-image">
+                  <img src="${this.homepaged[i].img1}">
+                  </div>
+     
+                  <div class="card-action">
+                      <a href="#" onclick="${this.homepaged[i].button1}"><i class="material-icons right">zoom_in</i>${this.homepaged[i].name1}</a>
+                  </div>
+                </div>
+              </div>
+        `;
+          }
+
+          html+=`
+            <h5 class="center-align">RECENT LIST IN THE BUCKET</h5>
+              <div class="row">
+              `;
+                let e = this.entry;
+                let count = 0;
+                for(let i=(e.length-1);i>=0;i--){
+                if(count++ === 3)break;
+
+                  html+= `
+                    <div class="col s12 m4">
+                     <div class="card small hoverable">
+                        <div class="card-image">
+                          <img src="${e[i].photo}">
+                          <span class="card-title">${e[i].what}</span>
+                        </div>
+                        <div class="card-content">
+                          <p>${e[i].description}</p>
+                        </div>
+                        <div class="card-action">
+                          <a href="#" onclick="component.entryView(${e[i].id})">More</a>
+                        </div>
+                     </div>
+                   </div>
+                   `;
+                }
+
+          html += `</div>`;
+
+          this.render(`
+            ${html}
+              `,document.getElementById("entryRecent"));
+    }
+
+    entryView(id){  //View entry by search box - type ID or NAME of entry
+        let e = this.findEntryByID(id);
+
+        let html = `
+            <h5 class="center-align">${e.what}</h5>
+              <div class="row">				
+                <div class="col s12 m12">
+                  <div class="card horizontal small">
+                    <div class="card-image">
+                    <img src="${e.photo}">
+                    </div>
                     <div class="card-stacked">
                       <div class="card-content">
-                      <p>${e.description}</p>
+                        <p>${e.description}</p>
                       </div>
                       <div class="card-action small">								
-                      <span onclick="component.deleteEntry(${e.id})" class="new badge small red" data-badge-caption="">DELETE</span>
-                      <span onclick="component.entryList()" class="new badge small" data-badge-caption="">BACK TO LIST</span>
-                            <span onclick="component.updateEntry(${e.id})" class="new badge small" data-badge-caption="">Update</span>
+                        <span onclick="component.deleteEntry(${e.id})" class="new badge small red" data-badge-caption="">DELETE</span>
+                        <span onclick="component.entryList()" class="new badge small" data-badge-caption="">BACK TO LIST</span>
+                        <span onclick="component.updateEntry(${e.id})" class="new badge small" data-badge-caption="">EDIT</span>
                       </div>
                     </div>					
-                </div>				
-              </div>			
-            </div>
+                  </div>				
+                </div>			
+              </div>
             `;
 
             html += `
               <div class="row">
-                <table class="striped">
-                  <thead>
-                    <tr>
-                      <th>Location</th>
-                      <th>Language Used</th>
-                      <th>Capital City</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>${e.location}</td>
-                      <td>${e.language}</td>
-                      <td>${e.capital}</td>
-                    </tr>					
-                  </tbody>
-                </table>
+                  <table class="striped">
+                    <thead>
+                      <tr>
+                        <th>Location</th>
+                        <th>Language Used</th>
+                        <th>Capital City</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>${e.location}</td>
+                        <td>${e.language}</td>
+                        <td>${e.capital}</td>
+                      </tr>					
+                    </tbody>
+                  </table>
               </div>
             `;
 
+          this.reRender(`		
+              ${html}			
+                         `,document.getElementById("entryView"));
+                       $('#entryView').show();
+                       $('#entryeRecent').hide();
+                       $('#entryList').hide();
+                       $('#entryCreate').hide();
+                       $('#home').hide();
+                       $('#landingpage').hide();
+                       $('#updateEntry').hide();
+    }
 
-         this.reRender(`		
-           ${html}			
-           `,document.getElementById("entryView"));
-         $('#entryView').show();
-         $('#entryeRecent').hide();
-         $('#entryList').hide();
-         $('#entryCreate').hide();
-         $('#home').hide();
-         $('#landingpage').hide();
-          $('#updateEntry').hide();
-       }
+    entryList(){    //List of entries on click the BUCKET LIST button
+      let html = `
+          <br/>
+            <nav>
+              <div class="nav-wrapper white">
+                <form>
+                  <div class="input-field">				
+                  <input onkeyup="component.entryListItems(this.value)" id="search" type="search" placeholder="Search" required>
+                  <label for="search"><i class="material-icons">search</i></label>
+                  <i class="material-icons">close</i>
+                  </div>
+                </form>
+              </div>
+            </nav>
+          <br/>
+          `;
 
-  entryList(){    //List of entries on click the BUCKET LIST button
-    let html = `
-      <br/>
-        <nav>
-        <div class="nav-wrapper white">
-        <form>
-        <div class="input-field">				
-        <input onkeyup="component.entryListItems(this.value)" id="search" type="search" placeholder="Search" required>
-        <label for="search"><i class="material-icons">search</i></label>
-        <i class="material-icons">close</i>
-        </div>
-        </form>
-        </div>
-        </nav>
-        <br/>
-        `;
+          html += `
+          <div class="row" id="entryListItems">
+          `;
+          let e = this.entry;
+          for(let i=0;i<e.length;i++){
+             html+= `
+               <div class="col s12 m4">
+                 <div class="card small hoverable">
+                   <div class="card-image">
+                    <img src="${e[i].photo}">
+                    <span class="card-title">${e[i].what}</span>
+                   </div>
+                   <div class="card-content">
+                    <p>${e[i].description}</p>
+                   </div>
+                   <div class="card-action">
+                    <a href="#" onclick="component.entryView(${e[i].id})">More</a>
+                   </div>
+                 </div>
+               </div>
+             `;
+          }
 
-        html += `
-        <div class="row" id="entryListItems">
-        `;
-        let e = this.entry;
-        for(let i=0;i<e.length;i++){
-         html+= `
-         <div class="col s12 m4">
-         <div class="card small hoverable">
-         <div class="card-image">
-         <img src="${e[i].photo}">
-         <span class="card-title">${e[i].what}</span>
-         </div>
-         <div class="card-content">
-         <p>${e[i].description}</p>
-         </div>
-         <div class="card-action">
-         <a href="#" onclick="component.entryView(${e[i].id})">More</a>
-         </div>
-         </div>
-         </div>
-         `;
-       }
+          html += `</div>`;
 
-       html += `</div>`;
-
-       this.reRender(`
+      this.reRender(`
          ${html}
-         `,document.getElementById("entryList"));
-       $('#entryList').show();
-       $('#entryView').hide();
-       $('#entryRecent').hide();
-       $('#entryCreate').hide();		
-       $('#home').hide(); 
-         $('#landingpage').hide();
-          $('#updateEntry').hide();
-     }
+                    `,document.getElementById("entryList"));
+                   $('#entryList').show();
+                   $('#entryView').hide();
+                   $('#entryRecent').hide();
+                   $('#entryCreate').hide();		
+                   $('#home').hide(); 
+                   $('#landingpage').hide();
+                   $('#updateEntry').hide();
+    }
 
   entryListItems(what){  // showing an entry at search using name in the serch box calling entry view fxn
       let html = ``;
       let e = this.findEntryByName(what);
       for(let i=0;i<e.length;i++){
-       html+= `
-       <div class="col s12 m4">
-       <div class="card small hoverable">
-       <div class="card-image">
-       <img src="${e[i].photo}">
-       <span class="card-title">${e[i].what}</span>
-       </div>
-       <div class="card-content">
-       <p>${e[i].description}</p>
-       </div>
-       <div class="card-action">
-       <a href="#" onclick="component.entryView(${e[i].id})">More</a>
-       </div>
-       </div>
-       </div>
-       `;
-     }		
-     this.reRender(`
-       ${html}
-       `,document.getElementById("entryListItems"));
-     $('#entryList').show();
-     $('#entryView').hide();
-     $('#entryRecent').hide();
-     $('#entryCreate').hide();	
-     $('#home').hide(); 
-       $('#landingpage').hide();
-        $('#updateEntry').hide();
-   }
+          html+= `
+             <div class="col s12 m4">
+               <div class="card small hoverable">
+                 <div class="card-image">
+                  <img src="${e[i].photo}">
+                  <span class="card-title">${e[i].what}</span>
+                 </div>
+                 <div class="card-content">
+                  <p>${e[i].description}</p>
+                 </div>
+                 <div class="card-action">
+                  <a href="#" onclick="component.entryView(${e[i].id})">More</a>
+                 </div>
+               </div>
+             </div>
+          `;
+      }		
 
-  entryCreate(){ // page for creating new ENTRY into the bucket list
-    let html = `
-    <div class="row">
-    <form class="col s12">
-    <h5 class="center-align">Add New Entry to the Bucket</h5>
-    <button onclick="component.createEntry()" class="btn waves-effect waves-light">Save</button>
-    <div class="row">
-    <div class="input-field col s6">
-    <input disabled value="${this.entry.length+1}" id="entry_id" type="text" class="validate">
-    </div>
-    <div class="input-field col s6">
-    <input id="entry_what" type="text" class="validate">
-    <label for="entry_what">WHAT</label>
-    </div>
-    </div>
-    <div class="row">
-    <div class="input-field col s6">
-    <input id="entry_description" type="text" class="validate">
-    <label for="entry_description">DESCRIPTION</label>
-    </div>
-    <div class="input-field col s6">
-    <input id="entry_photo" type="text" class="validate">
-    <label for="entry_photo">PHOTO</label>
-    </div>
-    </div>
-    <div class="row">
-    <div class="input-field col s4">
-    <input id="entry_location" type="text" class="validate">
-    <label for="entry_location">LOCATION</label>
-    </div>
-    <div class="input-field col s4">
-    <input id="entry_language" type="text" class="validate">
-    <label for="entry_language">LANGUAGE USED</label>
-    </div>
-    <div class="input-field col s4">
-    <input id="entry_capital" type="text" class="validate">
-    <label for="entry_capital">CAPITAL CITY</label>
-    </div>
-    </div>
-    `;
+      this.reRender(`
+         ${html}
+                    `,document.getElementById("entryListItems"));
+                   $('#entryList').show();
+                   $('#entryView').hide();
+                   $('#entryRecent').hide();
+                   $('#entryCreate').hide();	
+                   $('#home').hide(); 
+                   $('#landingpage').hide();  
+                   $('#updateEntry').hide();
+    }
 
-    this.reRender(`
-     ${html}
-     `,document.getElementById("entryCreate"));
-    $('#entryCreate').show();
-    $('#entryList').hide();
-    $('#entryView').hide();
-    $('#entryeRecent').hide();
-    $('#home').hide();
-      $('#landingpage').hide();
-       $('#updateEntry').hide();
-    this.state[0].bind.procedures = [];		
-    this.state[0].bind.toDopers = [];		
-    this.state[0].bind.toDosec = [];		
-  }
+    entryCreate(){ // page for creating new ENTRY into the bucket list
+      let html = `
+          <div class="row">
+            <form class="col s12">
+            <h5 class="center-align">Add New Entry to the Bucket</h5>
+            <button onclick="component.createEntry()" class="btn waves-effect waves-light">Save</button>
+            
+              <div class="row">
+                <div class="input-field col s6">
+                <input disabled value="${this.entry.length+1}" id="entry_id" type="text" class="validate">
+                </div>
+                <div class="input-field col s6">
+                <input id="entry_what" type="text" class="validate">
+                <label for="entry_what">WHAT</label>
+                </div>
+              </div>
 
+              <div class="row">
+                <div class="input-field col s6">
+                <input id="entry_description" type="text" class="validate">
+                <label for="entry_description">DESCRIPTION</label>
+                </div>
+                <div class="input-field col s6">
+                <input id="entry_photo" type="text" class="validate">
+                <label for="entry_photo">PHOTO</label>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="input-field col s4">
+                <input id="entry_location" type="text" class="validate">
+                <label for="entry_location">LOCATION</label>
+                </div>
+                <div class="input-field col s4">
+                <input id="entry_language" type="text" class="validate">
+                <label for="entry_language">LANGUAGE USED</label>
+                </div>
+                <div class="input-field col s4">
+                <input id="entry_capital" type="text" class="validate">
+                <label for="entry_capital">CAPITAL CITY</label>
+                </div>
+              </div>
+            </form>
+          </div>
+      `;
+
+      this.reRender(`
+        ${html}
+                   `,document.getElementById("entryCreate"));
+                    $('#entryCreate').show();
+                    $('#entryList').hide();
+                    $('#entryView').hide();
+                    $('#entryeRecent').hide();
+                    $('#home').hide();
+                    $('#landingpage').hide();
+                    $('#updateEntry').hide();
+      /*              
+      this.state[0].bind.procedures = [];		
+      this.state[0].bind.toDopers = [];		
+      this.state[0].bind.toDosec = [];	*/
+    }
 
     updateEntry(id){
 
-    id = id - 1;
-    let html = `
-    
+      id = id - 1;
+      let html = `
+          <div class="row">
+            <form class="col s12">
+            <h5 class="center-align">EDIT THIS ENTRY</h5>
+            <button onclick="component.entryList()" class="btn waves-effect waves-light">Back</button>
+                  <a onclick="component.updateEntryId(${id})" class="waves-effect blue waves-light btn">Update</a>
+            
+              <div class="row">
+                <div class="input-field col s6">
+                <input disabled value="${this.entry.length+1}" id="entry_id" type="text" class="validate">
+                </div>
+                <div class="input-field col s6">
+                <input id="what_1" type="text" value="${this.entry[id].what}" class="validate">
+                <label for="what_1">WHAT</label>
+                </div>
+              </div>
 
+              <div class="row">
+                <div class="input-field col s6">
+                <input id="description_1" type="text" value="${this.entry[id].description}" class="validate">
+                <label for="description_1">DESCRIPTION</label>
+                </div>
+                <div class="input-field col s6">
+                <input id="photo_1" type="text" value="${this.entry[id].photo}" class="validate">
+                <label for="photo_1">PHOTO</label>
+                </div>
+              </div>
 
-    <center>
-    <div class="form-style-3">
-    <div class="row">
-    <fieldset>
-    <center><h1>Update Entries</h1></center>
-    <center><span >Entry Passes<span class="required">*</span></span><input disabled value="${this.entry.length+1}" id="entry_id" type="text" ></label></center>
-    <center><span>Update Name</span><input type="email" id="what_1"value="${this.entry[id].what}"/> </label></center>
-    <center><span>Update Description</span><input type="email" id="description_1"value="${this.entry[id].description}"/> </label></center>
-    <center><span>Update Photo</span><input type="email" id="photo_1"value="${this.entry[id].photo}"/> </label></center>
-	<center> <span>Update Location</span><input type="email" id="location_1"value="${this.entry[id].location} "/> </label></center>
-	   <center><span>Update Language</span><input type="email" id="language_1"value="${this.entry[id].language}"/> </label></center>
-    <center><span>Update Capital</span><input type="email" id="capital_1"value="${this.entry[id].capital}"/> </label></center>
- 
-
-    <div class="center-align">
-    <button onclick="component.entryList()" class="btn waves-effect waves-light">Back</button>
-    <a onclick="component.updateEntryId(${id})" class="waves-effect blue waves-light btn">Update</a>
-    </div>
-    </div>
-</fieldset>
-
-    </div>
-    </center>
-
-
-
-
-
-
-    `;  
-    this.reRender(`
-
-      ${html}
-
-      `,document.getElementById("updateEntry"));   
-  $('#entryCreate').hide();
-    $('#entryList').hide();
-    $('#entryView').hide();
-    $('#entryeRecent').hide();
-    $('#home').hide();
-      $('#landingpage').hide();
-      $('#updateEntry').show();
-    
-    
-    
-    
-  }
-
-  
-
-  home(){ //is used to call the home page to enable the whole landing page
-    let html=`
-      <div class="row">
-      `;
-        for(let i=0;i<this.homepaged.length;i++){
-        html+= `
-        <div class="col s6 m6">
-        <div class="card ">
-        <div class="card-image">
-        <img src="${this.homepaged[i].img1}">
-
-        </div>
-        <div class="card-content">
-
-        </div>
-        <div class="card-action">
-        <a href="#" onclick="${this.homepaged[i].button1}"><i class="material-icons right">zoom_in</i>${this.homepaged[i].name1}</a>
-        </div>
-        </div>
-        </div>
-        `;
-      }
-
-      html+=`
-        <h5 class="center-align">RECENT LIST IN THE BUCKET</h5>
-        <div class="row">
-      `;
-
-     let e = this.entry;
-     let count = 0;
-       for(let i=(e.length-1);i>=0;i--){       
-       if(count++ === 3)break;
-     html+= `
-       <div class="col s12 m4">
-       <div class="card small hoverable">
-       <div class="card-image">
-       <img src="${e[i].photo}">
-       <span class="card-title">${e[i].what}</span>
-       </div>
-       <div class="card-content">
-       <p>${e[i].description}</p>
-       </div>
-       <div class="card-action">
-       <a href="#" onclick="component.entryView(${e[i].id})">More</a>
-       </div>
-       </div>
-       </div>
-     `;
+              <div class="row">
+                <div class="input-field col s4">
+                <input id="location_1" type="text" value="${this.entry[id].location} class="validate">
+                <label for="location_1">LOCATION</label>
+                </div>
+                <div class="input-field col s4">
+                <input id="language_1" type="text" value="${this.entry[id].language} class="validate">
+                <label for="language_1">LANGUAGE USED</label>
+                </div>
+                <div class="input-field col s4">
+                <input id="capital_1" type="text" value="${this.entry[id].capital}" class="validate">
+                <label for="capital_1">CAPITAL CITY</label>
+                </div>
+              </div>
+            </form>
+          </div>
+      `;  
+      
+      this.reRender(`
+         ${html}
+                    `,document.getElementById("updateEntry"));   
+                    $('#entryCreate').hide();
+                    $('#entryList').hide();
+                    $('#entryView').hide();
+                    $('#entryeRecent').hide();
+                    $('#home').hide();
+                    $('#landingpage').hide();
+                    $('#updateEntry').show();  
+      
     }
 
-      html+=`
-      `;
+    home(){ //is used to call the home page to enable the whole landing page
+      let html=`
+        <div class="row">
+          `;
+          for(let i=0;i<this.homepaged.length;i++){
+            html+= `
+              <div class="col s6 m6">
+                <div class="card ">
+                  <div class="card-image">
+                    <img src="${this.homepaged[i].img1}">
+                  </div>
+                  <div class="card-content"></div>
+                  <div class="card-action">
+                    <a href="#" onclick="${this.homepaged[i].button1}"><i class="material-icons right">zoom_in</i>${this.homepaged[i].name1}</a>
+                  </div>
+                </div>
+              </div>
+            `;
+          }
 
-   this.reRender(`
-     ${html}
-     `,document.getElementById("entryCreate"));
+        html+=`
+          <h5 class="center-align">RECENT LIST IN THE BUCKET</h5>
+          <div class="row">
+        `;
 
-   $('#entryeRecent').show();
-   $('#entryCreate').show();
-   $('#entryList').hide();
-   $('#entryView').hide();
-   $('#landingpage').hide();
-   $('#home').show();
-   $('#updateEntry').hide();
-  }	
+      let e = this.entry;
+      let count = 0;
+          for(let i=(e.length-1);i>=0;i--){       
+              if(count++ === 3)break;
+              html+= `
+                 <div class="col s12 m4">
+                   <div class="card small hoverable">
+                     <div class="card-image">
+                       <img src="${e[i].photo}">
+                       <span class="card-title">${e[i].what}</span>
+                     </div>
+                     <div class="card-content">
+                      <p>${e[i].description}</p>
+                     </div>
+                     <div class="card-action">
+                      <a href="#" onclick="component.entryView(${e[i].id})">More</a>
+                     </div>
+                   </div>
+                 </div>
+              `;
+          }
 
+          html+=`
+          `;
+
+      this.reRender(`
+        ${html}
+                    `,document.getElementById("entryCreate"));
+
+                   $('#entryeRecent').show();
+                   $('#entryCreate').show();
+                   $('#entryList').hide();
+                   $('#entryView').hide();
+                   $('#landingpage').hide();
+                   $('#home').show();
+                   $('#updateEntry').hide();
+    }
   }
 
 let component = new Component();
